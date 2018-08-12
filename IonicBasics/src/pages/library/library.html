@@ -17,8 +17,13 @@
   <p>Select Your favorite Quote</p>
   <ion-list>
 
-    <button ion-item *ngFor="let item of quoteCollection">
-       <ion-icon [name]="item.icon"  ></ion-icon>{{item.category}}
+    <button ion-item
+            *ngFor="let item of quoteCollection; let i =index"
+            [navPush]="sss"
+    >
+      <ion-icon [name]="item.icon" item-left></ion-icon>
+      <h3>{{item.category | uppercase}}</h3>
+      <p>{{item.quotes.length}} Quote</p>
     </button>
   </ion-list>
 </ion-content>

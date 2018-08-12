@@ -9,13 +9,19 @@ import { HomePage } from '../pages/home/home';
 import {FavoritesPage} from "../pages/favorites/favorites";
 import {TabsPage} from "../pages/tabs/tabs";
 import {LibraryPage} from "../pages/library/library";
+import {QuotePage} from "../pages/quote/quote";
+import {QuotesPage} from "../pages/quotes/quotes";
+import {SettingsPage} from "../pages/settings/settings";
 
 @NgModule({
   declarations: [
     MyApp,
     FavoritesPage,
     TabsPage,
-    LibraryPage
+    QuotePage,
+    LibraryPage,
+    QuotesPage,
+    SettingsPage
   ],
   imports: [
     BrowserModule,
@@ -26,8 +32,10 @@ import {LibraryPage} from "../pages/library/library";
     MyApp,
     FavoritesPage,
     TabsPage,
-    LibraryPage
-  ],
+    QuotePage,
+    LibraryPage,
+    QuotesPage,
+    SettingsPage],
   providers: [
     StatusBar,
     SplashScreen,
