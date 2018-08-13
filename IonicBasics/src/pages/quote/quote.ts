@@ -21,6 +21,7 @@ export class QuotePage {
   }
   onUnFavorite(){
     this.qoutesServices.removeQuoteFromFavorite(this.navParams.data)
+    this.onClose();
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad QuotePage');

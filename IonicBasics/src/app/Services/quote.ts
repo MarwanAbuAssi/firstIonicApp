@@ -10,7 +10,7 @@ export class QuotesServices {
       console.log(qouteEl);
       return qouteEl.id == quote.id;
     });
-    this.favoriteQoutes.slice(position, 1)
+    this.favoriteQoutes.splice(position, 1)
     console.log(quote);
     console.log(this.favoriteQoutes);
   }
