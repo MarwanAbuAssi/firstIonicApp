@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import {ModalController, NavController, NavParams, ViewController} from 'ionic-angular';
+import {QuotesServices} from "../../app/Services/quote";
 
 /**
  * Generated class for the QuotePage page.
@@ -14,12 +15,19 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'quote.html',
 })
 export class QuotePage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  person:string="";
+  text :string=""
+  constructor(public qoutesServices: QuotesServices,public viewCtrl: ViewController, public navCtrl: NavController, public navParams: NavParams) {
   }
-
+  onUnFavorite(){
+    this.qoutesServices.removeQuoteFromFavorite(this.navParams.data)
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad QuotePage');
+    this.person= this.navParams.get("person")
+    this.text= this.navParams.get("text")
   }
-
+ onClose(){
+    this.viewCtrl.dismiss();
+ }
 }

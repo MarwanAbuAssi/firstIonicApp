@@ -7,12 +7,21 @@
 <ion-header>
 
   <ion-navbar text-center>
-    <ion-title>favorites</ion-title>
+    <ion-title>Favorites</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+  <ion-list>
+    <button (click)="presentModal(quote)"ion-item *ngFor="let quote of quotes;">
+      <h3>
+        {{quote.person | uppercase}}
+      </h3>
+      <p>
+        {{quote.text}}
+      </p>
+    </button>
+  </ion-list>
 </ion-content>

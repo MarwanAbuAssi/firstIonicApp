@@ -4,13 +4,18 @@ export class QuotesServices {
   addQuoteToFavorite(qoute) {
     this.favoriteQoutes.push(qoute)
   }
+
   removeQuoteFromFavorite(quote) {
-    const position = this.favoriteQoutes.findIndex((qouteEl)=>{
+    const position = this.favoriteQoutes.findIndex((qouteEl) => {
+      console.log(qouteEl);
       return qouteEl.id == quote.id;
     });
-    this.favoriteQoutes.slice(position,1)
+    this.favoriteQoutes.slice(position, 1)
+    console.log(quote);
+    console.log(this.favoriteQoutes);
   }
+
   getFavoriteQoute() {
-      return this.favoriteQoutes;
+    return this.favoriteQoutes;
   }
 }
