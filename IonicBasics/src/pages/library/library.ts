@@ -4,7 +4,7 @@ import { NavController, NavParams} from 'ionic-angular';
 import quotes from "../../app/Data/quotes";
 import {QuotesPage} from '../quotes/quotes';
 import {SettingsPage} from "../settings/settings";
-
+QuotesPage
 /**
  * Generated class for the LibraryPage page.
  *
@@ -18,7 +18,7 @@ import {SettingsPage} from "../settings/settings";
 })
 export class LibraryPage implements OnInit {
   quoteCollection: any;
- sss=SettingsPage;
+ quotesPage=QuotesPage;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
@@ -31,8 +31,8 @@ export class LibraryPage implements OnInit {
     console.log(quotes)
   }
 
-  openQuote() {
-    this.navCtrl.push(SettingsPage)
+  openQuote(data) {
+    this.navCtrl.push(SettingsPage,{quotes:data})
 
   }
 

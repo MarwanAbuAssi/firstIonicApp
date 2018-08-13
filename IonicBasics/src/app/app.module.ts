@@ -12,7 +12,7 @@ import {LibraryPage} from "../pages/library/library";
 import {QuotePage} from "../pages/quote/quote";
 import {QuotesPage} from "../pages/quotes/quotes";
 import {SettingsPage} from "../pages/settings/settings";
-
+import {QuotesServices} from './Services/quote'
 @NgModule({
   declarations: [
     MyApp,
@@ -39,7 +39,8 @@ import {SettingsPage} from "../pages/settings/settings";
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    QuotesServices
   ]
 })
 export class AppModule {}
