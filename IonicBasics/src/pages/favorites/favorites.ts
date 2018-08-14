@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {ModalController, NavController, NavParams} from 'ionic-angular';
+import {MenuController, ModalController, NavController, NavParams, ViewController} from 'ionic-angular';
 
 import {QuotesServices} from "../../app/Services/quote";
 import {QuotePage} from "../quote/quote";
@@ -19,7 +19,7 @@ import {QuotePage} from "../quote/quote";
 })
 export class FavoritesPage {
 private quotes :any[];
-  constructor(public modalCtrl:ModalController,public quotesSerevice :QuotesServices ,public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public menuCtrl: MenuController,public viewCtrl :ViewController,public qoutesServices:QuotesServices,public modalCtrl:ModalController,public quotesSerevice :QuotesServices ,public navCtrl: NavController, public navParams: NavParams) {
   }
   presentModal(quote) {
     const modal = this.modalCtrl.create(QuotePage,quote);
@@ -28,5 +28,10 @@ private quotes :any[];
   ionViewWillEnter() {
     this.quotes= this.quotesSerevice.getFavoriteQoute();
   }
-
+  onDelete(){
+    this.qoutesServices.removeQuoteFromFavorite(this.navParams.data);
+  }
+  // onOpenMenu(){
+  //   this.menuCtrl.open()
+  // }
 }

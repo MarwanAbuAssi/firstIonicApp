@@ -6,8 +6,11 @@
 -->
 <ion-header>
 
-  <ion-navbar text-center>
-    <ion-title>Favorites</ion-title>
+  <ion-navbar>
+    <button ion-button  menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title text-center="">Favorites Quotes</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -28,7 +31,7 @@
           </p>
       </ion-item>
       <ion-item-options>
-        <button ion-button color="danger">
+        <button (click)="onDelete(quote)" ion-button color="danger">
           DELETE
           <ion-icon name="trash"></ion-icon>
         </button>

@@ -7,6 +7,9 @@
 <ion-header>
 
   <ion-navbar>
+    <button ion-button  color="primary"  start   menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title>settings</ion-title>
   </ion-navbar>
 
@@ -14,5 +17,9 @@
 
 
 <ion-content padding>
+  <ion-item>
+    <ion-label>Change Background</ion-label>
+    <ion-toggle color="secondary" (ionChange)="onToggel($event)" small [(ngModel)]="backgroundChange"></ion-toggle>
+  </ion-item>
 
 </ion-content>
